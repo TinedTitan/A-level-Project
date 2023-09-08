@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://7bde67j70grc"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_c4mag"]
+[ext_resource type="Texture2D" uid="uid://dv0d7stf1ory1" path="res://icon.svg" id="1_viqd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4vnp"]
+size = Vector2(64, 64)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(24, 12)
+collision_layer = 3
+script = ExtResource("1_c4mag")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d4vnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_viqd6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -39.0
+offset_top = -64.0
+offset_right = 40.0
+offset_bottom = -38.0
+text = "ARRESTED"
+
+[node name="Camera2D" type="Camera2D" parent="."]

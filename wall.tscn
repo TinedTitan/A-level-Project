@@ -1,0 +1,197 @@
+[gd_scene load_steps=2 format=3 uid="uid://csonp4jfl0guc"]
+
+[ext_resource type="PackedScene" uid="uid://csonp4jfl0guc" path="res://wall.tscn" id="1_quc8v"]
+
+[node name="Node" type="Node"]
+
+[node name="Wall9" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 231)
+
+[node name="Wall10" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 253)
+
+[node name="Wall11" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 187)
+
+[node name="Wall12" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 209)
+
+[node name="Wall13" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 319)
+
+[node name="Wall14" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 341)
+
+[node name="Wall15" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 275)
+
+[node name="Wall16" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 297)
+
+[node name="Wall3" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 55)
+
+[node name="Wall4" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 77)
+
+[node name="Wall2" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 11)
+
+[node name="Wall" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 33)
+
+[node name="Wall5" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 143)
+
+[node name="Wall6" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 165)
+
+[node name="Wall7" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 99)
+
+[node name="Wall8" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 121)
+
+[node name="Wall17" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 583)
+
+[node name="Wall18" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 605)
+
+[node name="Wall19" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 539)
+
+[node name="Wall20" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 561)
+
+[node name="Wall21" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 671)
+
+[node name="Wall22" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 693)
+
+[node name="Wall23" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 627)
+
+[node name="Wall24" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 649)
+
+[node name="Wall25" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 407)
+
+[node name="Wall26" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 429)
+
+[node name="Wall27" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 363)
+
+[node name="Wall28" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 385)
+
+[node name="Wall29" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 495)
+
+[node name="Wall30" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 517)
+
+[node name="Wall31" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 451)
+
+[node name="Wall32" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 473)
+
+[node name="Wall33" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 935)
+
+[node name="Wall34" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 957)
+
+[node name="Wall35" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 891)
+
+[node name="Wall36" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 913)
+
+[node name="Wall37" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1023)
+
+[node name="Wall38" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1045)
+
+[node name="Wall39" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 979)
+
+[node name="Wall40" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1001)
+
+[node name="Wall41" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 759)
+
+[node name="Wall42" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 781)
+
+[node name="Wall43" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 715)
+
+[node name="Wall44" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 737)
+
+[node name="Wall45" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 847)
+
+[node name="Wall46" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 869)
+
+[node name="Wall47" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 803)
+
+[node name="Wall48" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 825)
+
+[node name="Wall49" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1287)
+
+[node name="Wall50" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1309)
+
+[node name="Wall51" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1243)
+
+[node name="Wall52" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1265)
+
+[node name="Wall53" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1375)
+
+[node name="Wall54" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1397)
+
+[node name="Wall55" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1331)
+
+[node name="Wall56" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1353)
+
+[node name="Wall57" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1111)
+
+[node name="Wall58" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1133)
+
+[node name="Wall59" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1067)
+
+[node name="Wall60" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1089)
+
+[node name="Wall61" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1199)
+
+[node name="Wall62" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1221)
+
+[node name="Wall63" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1155)
+
+[node name="Wall64" parent="." instance=ExtResource("1_quc8v")]
+position = Vector2(11, 1177)

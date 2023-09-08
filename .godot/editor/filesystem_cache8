@@ -1,0 +1,15 @@
+2a60927148abd1d33b818b535e306557
+::res://::1694162634
+enemy.gd::GDScript::-1::1694130812::0::1::::<>CharacterBody2D<>::
+enemy.tscn::PackedScene::2472782520235233853::1694162609::0::1::::<><>::res://enemy.gd<>uid://dv0d7stf1ory1
+icon.svg::CompressedTexture2D::8685077482746812798::1694037801::1694037810::1::::<><>::
+level1.tscn::PackedScene::5059410612752110009::1694162609::0::1::::<><>::uid://7bde67j70grc<>uid://bbh3mqb5o5ekj<>uid://dqiqnggynusc4
+player.gd::GDScript::-1::1694131478::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2248298346435282500::1694162609::0::1::::<><>::res://player.gd<>uid://dv0d7stf1ory1
+room.tscn::PackedScene::1240555825014342817::1694121642::0::1::::<><>::uid://csonp4jfl0guc
+tile_map.tscn::PackedScene::8299793584042883481::1694162609::0::1::::<><>::uid://d0ow3lrg0l7s6<>uid://v11xke2stmc6
+wall block.tscn::PackedScene::1529259785740265259::1694162609::0::1::::<><>::uid://85hkeaulwd75
+wall.tscn::PackedScene::6065959486565420314::1694121857::0::1::::<><>::uid://csonp4jfl0guc
+::res://resources/::1694122737
+square.png::CompressedTexture2D::2378606260582954186::1694121467::1694122076::1::::<><>::
+tilesheet_complete.png::CompressedTexture2D::8944270810982166507::1452104393::1694122737::1::::<><>::

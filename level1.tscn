@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cec20vfuwv386"]
+
+[ext_resource type="PackedScene" uid="uid://7bde67j70grc" path="res://player.tscn" id="1_686e6"]
+[ext_resource type="PackedScene" uid="uid://bbh3mqb5o5ekj" path="res://enemy.tscn" id="1_ewrqi"]
+[ext_resource type="PackedScene" uid="uid://dqiqnggynusc4" path="res://tile_map.tscn" id="2_4f1tb"]
+
+[node name="Main" type="Node"]
+
+[node name="enemy" parent="." groups=["enemy"] instance=ExtResource("1_ewrqi")]
+position = Vector2(874, 517)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_686e6")]
+top_level = true
+position = Vector2(66, 601)
+
+[node name="TileMap" parent="." instance=ExtResource("2_4f1tb")]
+visibility_layer = 524288
+z_index = -1
+position = Vector2(387.001, 302.015)
+
+[connection signal="caught" from="enemy" to="Player" method="_on_enemy_caught"]
