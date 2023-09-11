@@ -1,12 +1,13 @@
 extends CharacterBody2D
-var dash = true
-var animlock = false
-#
+var dash = true #whether the player can dash or not
+var animlock = false #while true, locks other animations from playing. This prevents weird animation-
+#clipping and stops animation cancelling on certain animations
 @export var speed = 800
 
 #HIDES THE LABEL UPON LOADING IN
 func _ready():
 	$Label.hide()
+	$AnimatedSprite2D.play("idle") #sets the animation to idle state
 
 #---------------------PLAYER INPUT---------------------------------------
 func movement_input():
@@ -27,23 +28,22 @@ func movement_input():
 #
 func _process(_delta):
 	
-	if animlock == false:
+	if animlock == false: #checks if the player is in a locked animation
+		
 		if Input.is_action_just_pressed("MB1"):
-			animlock = true
+			animlock = true #locks other animations
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("Slash")
-			while not $AnimatedSprite2D.is_playing():
-				animlock = false
-				
-		if dash == true:
-			if Input.is_action_just_pressed("shift"):
-				animlock = true
-				speed = 5000
-				$"Dash Active".start()
-				print("Dash")
-				$AnimatedSprite2D.stop()
-				$AnimatedSprite2D.play("dash")
-				dash = false
+			$Attacking.start()
+			
+	if dash == true: #checks if the player can dash
+		if Input.is_action_just_pressed("shift"):
+			speed = 5000
+			$"Dash Active".start() #starts the timer of the dash being active
+			print("Dash")
+			$AnimatedSprite2D.stop() #stops any other ongoing animation and begins dash - enables dash-cancel
+			$AnimatedSprite2D.play("dash")
+			dash = false
 		
 		
 #runs every physics update (once a frame)
@@ -55,8 +55,8 @@ func _physics_process(_delta): #called every frame
 	if velocity.x != 0 or velocity.y != 0:
 		if animlock == false:
 			$AnimatedSprite2D.play("Moving")
-	else:
-		$AnimatedSprite2D.pause()
+	elif animlock != true:
+		$AnimatedSprite2D.play("idle")
 	
 	look_at(get_global_mouse_position())
 
@@ -74,3 +74,6 @@ func _on_dash_active_timeout():
 func _on_dash_cooldown_timeout():
 	dash = true
 	print("Cooldown Timeout")
+
+func _on_attacking_timeout():
+	animlock = false

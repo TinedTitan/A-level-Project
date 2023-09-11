@@ -663,11 +663,55 @@ animations = [{
 "texture": ExtResource("159_61sup")
 }, {
 "duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
 "texture": ExtResource("160_cdkt7")
 }],
 "loop": false,
 "name": &"dash",
-"speed": 5.0
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wa7a5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 60.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -695,7 +739,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_t272x")
-animation = &"Hit"
+animation = &"Slash"
 metadata/_edit_lock_ = true
 
 [node name="Dash Cooldown" type="Timer" parent="."]
@@ -705,5 +749,9 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="Attacking" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="Dash Cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Dash Active" to="." method="_on_dash_active_timeout"]
+[connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]
