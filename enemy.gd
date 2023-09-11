@@ -22,6 +22,11 @@ func _physics_process(delta):
 		look_at(player.global_position)
 		set_velocity(direction * speed)
 		move_and_slide()
+		
+		if velocity.x != 0 or velocity.y != 0:
+			$AnimatedSprite2D.play("Moving")
+		else:
+			$AnimatedSprite2D.stop()
 
 func _on_catch_body_entered(body):
 	emit_signal("caught")

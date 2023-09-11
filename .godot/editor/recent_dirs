@@ -1,3 +1,8 @@
+res://resources/enemyRanged/reload
+res://resources/enemyRanged/hit
+res://resources/enemyRanged/hipFire
+res://resources/enemyRanged/shoot
+res://resources/enemyRanged/run
 res://resources/enemyClose/hit
 res://resources/enemyClose/thrust
 res://resources/enemyClose/slash

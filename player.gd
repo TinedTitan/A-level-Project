@@ -8,7 +8,8 @@ func _ready():
 	$Label.hide()
 
 #---------------------PLAYER INPUT---------------------------------------
-func player_input():
+func movement_input():
+
 	var vector = Vector2.ZERO #sets the player's velocity to 0,0
 	if Input.is_action_pressed("move_right"): #simple inputs to set player velocity
 		vector.x += 1
@@ -24,16 +25,22 @@ func player_input():
 		print(vector)
 		set_velocity(vector)
 #
+func _process(delta):
+	if Input.is_action_just_pressed("MB1"):
+		$AnimatedSprite2D.play("Slash")
+
 func _physics_process(delta): #called every frame
-	$AnimatedSprite2D.pause()
 	set_velocity(Vector2.ZERO)
-	player_input() #runs player input function
+	movement_input() #runs player input function
 	move_and_slide() #uses inbuilt move_and_slide function to move the player based on velocity
 	
 	if velocity.x != 0 or velocity.y != 0:
 		$AnimatedSprite2D.play("Moving")
+	elif not $AnimatedSprite2D.is_playing():
+		$AnimatedSprite2D.pause()
 	
 	look_at(get_global_mouse_position())
 
 func _on_enemy_caught():
 	$Label.show()
+

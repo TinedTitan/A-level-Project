@@ -204,7 +204,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_p170r")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 30.0
 }, {
@@ -460,7 +460,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("96_rqlvw")
 }],
-"loop": true,
+"loop": false,
 "name": &"Slash",
 "speed": 60.0
 }, {
@@ -648,9 +648,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("157_pij4a")
 }],
-"loop": true,
+"loop": false,
 "name": &"Thrust",
-"speed": 60.0
+"speed": 80.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -678,6 +678,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_t272x")
-animation = &"Moving"
-frame_progress = 0.789333
+animation = &"Thrust"
+frame = 60
+frame_progress = 1.0
 metadata/_edit_lock_ = true
