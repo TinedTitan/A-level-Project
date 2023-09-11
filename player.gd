@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+var dash = true
+var animlock = false
 #
 @export var speed = 800
 
@@ -22,21 +23,39 @@ func movement_input():
 #--------------------------VECTOR MATH---------------------------------------------------------
 	vector = vector.normalized() * speed #scales the magnitude to 1 - keeps speed the same when moving diagonally
 	if vector.length() > 0: #if the magnitude of the vector is greater than 0
-		print(vector)
 		set_velocity(vector)
 #
-func _process(delta):
-	if Input.is_action_just_pressed("MB1"):
-		$AnimatedSprite2D.play("Slash")
-
-func _physics_process(delta): #called every frame
+func _process(_delta):
+	
+	if animlock == false:
+		if Input.is_action_just_pressed("MB1"):
+			animlock = true
+			$AnimatedSprite2D.stop()
+			$AnimatedSprite2D.play("Slash")
+			while not $AnimatedSprite2D.is_playing():
+				animlock = false
+				
+		if dash == true:
+			if Input.is_action_just_pressed("shift"):
+				animlock = true
+				speed = 5000
+				$"Dash Active".start()
+				print("Dash")
+				$AnimatedSprite2D.stop()
+				$AnimatedSprite2D.play("dash")
+				dash = false
+		
+		
+#runs every physics update (once a frame)
+func _physics_process(_delta): #called every frame
 	set_velocity(Vector2.ZERO)
 	movement_input() #runs player input function
 	move_and_slide() #uses inbuilt move_and_slide function to move the player based on velocity
 	
 	if velocity.x != 0 or velocity.y != 0:
-		$AnimatedSprite2D.play("Moving")
-	elif not $AnimatedSprite2D.is_playing():
+		if animlock == false:
+			$AnimatedSprite2D.play("Moving")
+	else:
 		$AnimatedSprite2D.pause()
 	
 	look_at(get_global_mouse_position())
@@ -44,3 +63,14 @@ func _physics_process(delta): #called every frame
 func _on_enemy_caught():
 	$Label.show()
 
+
+func _on_dash_active_timeout():
+	speed = 800
+	$"Dash Cooldown".start()
+	animlock = false
+	print("Active Timeout")
+
+
+func _on_dash_cooldown_timeout():
+	dash = true
+	print("Cooldown Timeout")

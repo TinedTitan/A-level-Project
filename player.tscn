@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://7bde67j70grc"]
+[gd_scene load_steps=163 format=3 uid="uid://7bde67j70grc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_c4mag"]
 [ext_resource type="Texture2D" uid="uid://duwtibwqjulix" path="res://resources/enemyClose/hit/armature_hit_00.png" id="2_wa7a5"]
@@ -157,6 +157,9 @@
 [ext_resource type="Texture2D" uid="uid://k6qfrxp4ct6t" path="res://resources/enemyClose/thrust/armature_thrust_58.png" id="155_oxhi3"]
 [ext_resource type="Texture2D" uid="uid://be2uqposex64i" path="res://resources/enemyClose/thrust/armature_thrust_59.png" id="156_4f588"]
 [ext_resource type="Texture2D" uid="uid://c84fgs0keyf61" path="res://resources/enemyClose/thrust/armature_thrust_60.png" id="157_pij4a"]
+[ext_resource type="Texture2D" uid="uid://c2bssrhvrh2sh" path="res://resources/dash/dash_startup.png" id="158_5hdfe"]
+[ext_resource type="Texture2D" uid="uid://ccp044rmcn7lk" path="res://resources/dash/dash_active.png" id="159_61sup"]
+[ext_resource type="Texture2D" uid="uid://hksht4m8gueb" path="res://resources/dash/dash_end.png" id="160_cdkt7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7vrl"]
 radius = 69.0
@@ -651,6 +654,20 @@ animations = [{
 "loop": false,
 "name": &"Thrust",
 "speed": 80.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("158_5hdfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_61sup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_cdkt7")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -678,7 +695,15 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_t272x")
-animation = &"Thrust"
-frame = 60
-frame_progress = 1.0
+animation = &"Hit"
 metadata/_edit_lock_ = true
+
+[node name="Dash Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Dash Active" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Dash Cooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="Dash Active" to="." method="_on_dash_active_timeout"]
