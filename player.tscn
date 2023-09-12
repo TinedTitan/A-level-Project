@@ -464,7 +464,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Slash",
-"speed": 60.0
+"speed": 90.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -652,7 +652,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Thrust",
-"speed": 80.0
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -720,7 +720,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_t272x")
-animation = &"dash"
+animation = &"Thrust"
 metadata/_edit_lock_ = true
 
 [node name="Dash Cooldown" type="Timer" parent="."]
@@ -731,8 +731,14 @@ wait_time = 0.1
 one_shot = true
 
 [node name="Attacking" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="HeavyAttacking" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="Dash Cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Dash Active" to="." method="_on_dash_active_timeout"]
 [connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]
+[connection signal="timeout" from="HeavyAttacking" to="." method="_on_attacking_timeout"]
+[connection signal="timeout" from="HeavyAttacking" to="." method="_on_heavy_attacking_timeout"]

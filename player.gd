@@ -35,6 +35,12 @@ func _process(_delta):
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("Slash")
 			$Attacking.start()
+		
+		if Input.is_action_just_pressed("MB2"):
+			animlock = true
+			$AnimatedSprite2D.stop()
+			$AnimatedSprite2D.play("Thrust")
+			$HeavyAttacking.start()
 			
 	if dash == true: #checks if the player can dash
 		if Input.is_action_just_pressed("shift"):
@@ -64,7 +70,7 @@ func _on_enemy_caught():
 	$Label.show()
 
 
-func _on_dash_active_timeout():
+func _on_dash_active_timeout(): #when the active dash has run out, returns speed to normal and begins cooldown
 	speed = 800
 	$"Dash Cooldown".start()
 	animlock = false
@@ -76,4 +82,7 @@ func _on_dash_cooldown_timeout():
 	print("Cooldown Timeout")
 
 func _on_attacking_timeout():
+	animlock = false
+
+func _on_heavy_attacking_timeout():
 	animlock = false
