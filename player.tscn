@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=3 uid="uid://7bde67j70grc"]
+[gd_scene load_steps=162 format=3 uid="uid://7bde67j70grc"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_c4mag"]
 [ext_resource type="Texture2D" uid="uid://duwtibwqjulix" path="res://resources/enemyClose/hit/armature_hit_00.png" id="2_wa7a5"]
@@ -159,7 +159,6 @@
 [ext_resource type="Texture2D" uid="uid://c84fgs0keyf61" path="res://resources/enemyClose/thrust/armature_thrust_60.png" id="157_pij4a"]
 [ext_resource type="Texture2D" uid="uid://c2bssrhvrh2sh" path="res://resources/dash/dash_startup.png" id="158_5hdfe"]
 [ext_resource type="Texture2D" uid="uid://ccp044rmcn7lk" path="res://resources/dash/dash_active.png" id="159_61sup"]
-[ext_resource type="Texture2D" uid="uid://hksht4m8gueb" path="res://resources/dash/dash_end.png" id="160_cdkt7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7vrl"]
 radius = 69.0
@@ -660,7 +659,13 @@ animations = [{
 "texture": ExtResource("158_5hdfe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("159_61sup")
+"texture": ExtResource("158_5hdfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_5hdfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_5hdfe")
 }, {
 "duration": 1.0,
 "texture": ExtResource("159_61sup")
@@ -676,34 +681,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("159_61sup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("160_cdkt7")
 }],
 "loop": false,
 "name": &"dash",
-"speed": 30.0
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -739,7 +720,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_t272x")
-animation = &"Slash"
+animation = &"dash"
 metadata/_edit_lock_ = true
 
 [node name="Dash Cooldown" type="Timer" parent="."]
