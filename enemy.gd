@@ -18,25 +18,22 @@ func _on_sightline_body_exited(body):
 	player = null
 	
 	player_chase = false
+	
 
 func _physics_process(delta):
 	if player_chase == true:
 		
-		$NavigationAgent2D.set_target_position(player.global_position)
+		$NavigationAgent2D.set_target_position(player.global_position) #sets the player as its target position
+		#updates every frame
 		
 		if not $NavigationAgent2D.is_navigation_finished(): #if the enemy hasn't reached the player
-			var current_agent_position = get_global_position()
+			var current_agent_position = get_global_position() #gets own position
 			
-			var next_path_position = $NavigationAgent2D.get_next_path_position()
-			velocity = (next_path_position - current_agent_position).normalized() * speed
+			var next_path_position = $NavigationAgent2D.get_next_path_position() #gets next position to path to player
+			velocity = (next_path_position - current_agent_position).normalized() * speed #calaculates vector to next position
+			look_at(player.global_position) #looks along its path
 			
-			look_at(player.global_position)
-			move_and_slide()
-		
-		#var direction = (player.position - position).normalized()
-		#look_at(player.global_position)
-		#set_velocity(direction * speed)
-		#move_and_slide()
+			move_and_slide() #moves using calculated vector
 		
 		if velocity.x != 0 or velocity.y != 0:
 			$AnimatedSprite2D.play("Moving")

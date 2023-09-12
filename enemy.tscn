@@ -1986,6 +1986,8 @@ animations = [{
 }]
 
 [node name="enemy" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_rkcbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -2005,7 +2007,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-3, 1)
 rotation = 1.5708
 scale = Vector2(50, 71.022)
-polygon = PackedVector2Array(-18.88, -2.75971, 0, 0, 19.18, -2.22466, 31.62, -20.036, 0.12, -20.4303, -28.36, -20.1768)
+polygon = PackedVector2Array(-31.0999, 23.2464, 0.800131, 25.4287, 35.9001, 22.2043, 31.62, -20.036, 0.259874, -24.4854, -28.36, -20.1768)
 
 [node name="catch" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
