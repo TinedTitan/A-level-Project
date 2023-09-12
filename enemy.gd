@@ -31,7 +31,6 @@ func _physics_process(delta):
 			
 			var next_path_position = $NavigationAgent2D.get_next_path_position() #gets next position to path to player
 			velocity = (next_path_position - current_agent_position).normalized() * speed #calaculates vector to next position
-			look_at(player.global_position) #looks along its path
 			
 			move_and_slide() #moves using calculated vector
 		
@@ -43,3 +42,8 @@ func _physics_process(delta):
 func _on_catch_body_entered(body):
 	emit_signal("caught")
 	print("hello")
+
+
+func _on_timer_timeout():
+	if player_chase == true:
+		look_at(player.global_position)

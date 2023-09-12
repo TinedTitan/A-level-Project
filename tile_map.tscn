@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqiqnggynusc4"]
+[gd_scene load_steps=11 format=3 uid="uid://dqiqnggynusc4"]
 
 [ext_resource type="Texture2D" uid="uid://d0ow3lrg0l7s6" path="res://resources/tilesheet_complete.png" id="1_5p1in"]
 
@@ -7,10 +7,10 @@ vertices = PackedVector2Array(-32, -32, 32, -32, 32, -13.5, -4, 32, -32, 32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, -13.5, -4, 32, -32, 32)])
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_sklw8"]
-vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dhtae"]
+vertices = PackedVector2Array(21.5, 21.5, 13, 32, -11.5, 32, -21.5, 22, -32, 9.5, -32, -10, -22, -20.5, 10.5, -32, 21, -22, 32, -10, 32, 10.5, -11.5, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 0, 6, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-22, -20.5, -11.5, -32, 10.5, -32, 21, -22, 32, -10, 32, 10.5, 21.5, 21.5, 13, 32, -11.5, 32, -21.5, 22, -32, 9.5, -32, -10)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rsc0t"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 5)
@@ -26,6 +26,16 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 
 vertices = PackedVector2Array(-32, -32, 23, -32, 2, 32, -32, 32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 23, -32, 2, 32, -32, 32)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mte3j"]
+vertices = PackedVector2Array(-32, -32, 32, -32, 32, 15, -32, 32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 15, -32, 32)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sroe1"]
+vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, 10.5, 32, -32, -7)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, 10.5, 32, -32, -7)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2jwg"]
 resource_name = "tilesheet"
@@ -416,9 +426,11 @@ texture_region_size = Vector2i(64, 64)
 15:5/0 = 0
 15:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:5/0/physics_layer_0/angular_velocity = 0.0
+15:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mte3j")
 16:5/0 = 0
 16:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:5/0/physics_layer_0/angular_velocity = 0.0
+16:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sroe1")
 17:5/0 = 0
 17:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:5/0/physics_layer_0/angular_velocity = 0.0
@@ -473,7 +485,7 @@ texture_region_size = Vector2i(64, 64)
 12:6/0 = 0
 12:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:6/0/physics_layer_0/angular_velocity = 0.0
-12:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sklw8")
+12:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_dhtae")
 13:6/0 = 0
 13:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:6/0/physics_layer_0/angular_velocity = 0.0

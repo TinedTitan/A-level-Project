@@ -2022,6 +2022,11 @@ sprite_frames = SubResource("SpriteFrames_cjai1")
 animation = &"Shoot"
 metadata/_edit_lock_ = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_entered" from="sightline" to="." method="_on_sightline_body_entered"]
 [connection signal="body_exited" from="sightline" to="." method="_on_sightline_body_exited"]
 [connection signal="body_entered" from="catch" to="." method="_on_catch_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
