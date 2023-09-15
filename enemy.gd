@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal caught
 
-var speed = 400
+var speed = 800
 var player_chase = false
 var player = null
 
@@ -12,12 +12,14 @@ func _ready():
 func _on_sightline_body_entered(body):
 	player = body
 	$NavigationAgent2D.set_target_position(player.global_position)
+	$AnimatedSprite2D.play("chase")
 	player_chase = true
 
 func _on_sightline_body_exited(body):
 	player = null
-	
+	$AnimatedSprite2D.play("default")
 	player_chase = false
+	
 	
 
 func _physics_process(delta):
@@ -31,19 +33,6 @@ func _physics_process(delta):
 			
 			var next_path_position = $NavigationAgent2D.get_next_path_position() #gets next position to path to player
 			velocity = (next_path_position - current_agent_position).normalized() * speed #calaculates vector to next position
-			
+			look_at(next_path_position)
 			move_and_slide() #moves using calculated vector
 		
-		if velocity.x != 0 or velocity.y != 0:
-			$AnimatedSprite2D.play("Moving")
-		else:
-			$AnimatedSprite2D.stop()
-
-func _on_catch_body_entered(body):
-	emit_signal("caught")
-	print("hello")
-
-
-func _on_timer_timeout():
-	if player_chase == true:
-		look_at(player.global_position)

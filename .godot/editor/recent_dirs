@@ -1,12 +1,8 @@
+res://resources/Boomba
+res://resources
 res://resources/dash
 res://resources/enemyClose/hit
-res://resources/enemyRanged/reload
-res://resources/enemyRanged/hit
-res://resources/enemyRanged/hipFire
-res://resources/enemyRanged/shoot
-res://resources/enemyRanged/run
 res://resources/enemyClose/thrust
 res://resources/enemyClose/slash
 res://resources/enemyClose/run
 res://
-res://resources

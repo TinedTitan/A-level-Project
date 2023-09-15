@@ -7,10 +7,10 @@ vertices = PackedVector2Array(-32, -32, 32, -32, 32, -13.5, -4, 32, -32, 32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, -13.5, -4, 32, -32, 32)])
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_dhtae"]
-vertices = PackedVector2Array(21.5, 21.5, 13, 32, -11.5, 32, -21.5, 22, -32, 9.5, -32, -10, -22, -20.5, 10.5, -32, 21, -22, 32, -10, 32, 10.5, -11.5, -32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 0, 6, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-22, -20.5, -11.5, -32, 10.5, -32, 21, -22, 32, -10, 32, 10.5, 21.5, 21.5, 13, 32, -11.5, 32, -21.5, 22, -32, 9.5, -32, -10)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0bvdx"]
+vertices = PackedVector2Array(15, 16, 6.5, 32, -7.5, 32, -18.5, 15, 16.5, -20.5, 32, -8, 32, 5, -32, 3.5, -32, -10, -18.5, -19.5, -6, -32, 7, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 0, 4), PackedInt32Array(4, 3, 7, 8, 9), PackedInt32Array(4, 9, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6, -32, 7, -32, 16.5, -20.5, 32, -8, 32, 5, 15, 16, 6.5, 32, -7.5, 32, -18.5, 15, -32, 3.5, -32, -10, -18.5, -19.5)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rsc0t"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 5)
@@ -485,7 +485,7 @@ texture_region_size = Vector2i(64, 64)
 12:6/0 = 0
 12:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:6/0/physics_layer_0/angular_velocity = 0.0
-12:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_dhtae")
+12:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_0bvdx")
 13:6/0 = 0
 13:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:6/0/physics_layer_0/angular_velocity = 0.0

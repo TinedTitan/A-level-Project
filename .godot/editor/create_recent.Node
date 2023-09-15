@@ -1,5 +1,6 @@
-Timer
 AnimatedSprite2D
+Sprite2D
+Timer
 RayCast2D
 Camera2D
 Label
@@ -10,5 +11,4 @@ StaticBody2D
 NavigationAgent2D
 TileMap
 Node
-Sprite2D
 CharacterBody2D
