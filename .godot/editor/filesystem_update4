@@ -1,5 +1,4 @@
-res://enemy.tscn
 res://level1.tscn
 res://player.tscn
-res://tile_map.tscn
+res://enemy.tscn
 res://enemy.gd

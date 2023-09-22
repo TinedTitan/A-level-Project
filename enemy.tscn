@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbh3mqb5o5ekj"]
+[gd_scene load_steps=16 format=3 uid="uid://bbh3mqb5o5ekj"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_rkcbv"]
 [ext_resource type="Texture2D" uid="uid://d33ukunfpkw08" path="res://resources/Boomba/boomba.png" id="2_1reqy"]
 [ext_resource type="Texture2D" uid="uid://bcwk5hfsxbibm" path="res://resources/Boomba/boomba empty.png" id="2_iy8fh"]
 [ext_resource type="Texture2D" uid="uid://udj2bpq5xxg8" path="res://resources/Boomba/boomba half.png" id="3_pw0sd"]
 [ext_resource type="Texture2D" uid="uid://bggxx0odqry56" path="res://resources/Boomba/boomba red.png" id="4_44kgr"]
+[ext_resource type="Texture2D" uid="uid://ctssb726eq7ha" path="res://resources/kaboom/boom1.png" id="6_der0h"]
+[ext_resource type="Texture2D" uid="uid://cimyrky3oxmog" path="res://resources/kaboom/boom2.png" id="7_yns0e"]
+[ext_resource type="Texture2D" uid="uid://cvtv1w8nbtqtx" path="res://resources/kaboom/boom3.png" id="8_njg54"]
+[ext_resource type="Texture2D" uid="uid://clvj1uu8ykwta" path="res://resources/kaboom/boom4.png" id="9_77a08"]
+[ext_resource type="Texture2D" uid="uid://ckw6ac7sm1yv4" path="res://resources/kaboom/boom5.png" id="10_hhrdf"]
+[ext_resource type="Texture2D" uid="uid://cl54gvwnysjaw" path="res://resources/kaboom/boom6.png" id="11_1ieo8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbsal"]
 size = Vector2(62, 62)
@@ -32,7 +38,71 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_der0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yns0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_der0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yns0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_der0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yns0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_der0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_der0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yns0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_njg54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_77a08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhrdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1ieo8")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iy8fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pw0sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_44kgr")
+}],
+"loop": true,
+"name": &"pre_explode",
+"speed": 30.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6oty"]
+radius = 1.60798
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylitu"]
+radius = 284.042
 
 [node name="enemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -46,6 +116,10 @@ shape = SubResource("RectangleShape2D_bbsal")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lctky")
+animation = &"explode"
+
 [node name="sightline" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -56,10 +130,34 @@ position = Vector2(-3, 1)
 rotation = 1.5708
 scale = Vector2(50, 71.022)
 polygon = PackedVector2Array(-31.0999, 23.2464, 0.800131, 25.4287, 35.9001, 22.2043, 31.62, -20.036, 0.259874, -24.4854, -28.36, -20.1768)
+metadata/_edit_lock_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_lctky")
-frame_progress = 0.598649
+[node name="bad zone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="shape" type="CollisionShape2D" parent="bad zone"]
+position = Vector2(-3, 1)
+rotation = 1.5708
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_q6oty")
+metadata/_edit_lock_ = true
+
+[node name="Big boom" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Explosion_radius" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="Explosion_radius"]
+top_level = true
+shape = SubResource("CircleShape2D_ylitu")
+disabled = true
 
 [connection signal="body_entered" from="sightline" to="." method="_on_sightline_body_entered"]
 [connection signal="body_exited" from="sightline" to="." method="_on_sightline_body_exited"]
+[connection signal="body_entered" from="bad zone" to="." method="_on_sightline_body_entered"]
+[connection signal="body_entered" from="bad zone" to="." method="_on_bad_zone_body_entered"]
+[connection signal="body_exited" from="bad zone" to="." method="_on_sightline_body_exited"]
+[connection signal="timeout" from="Big boom" to="." method="_on_big_boom_timeout"]

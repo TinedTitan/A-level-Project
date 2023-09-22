@@ -1,25 +1,28 @@
 extends CharacterBody2D
 
-signal caught
-
-var speed = 800
+@export var hp = 25
+var speed = 880
+signal kaboom
 var player_chase = false
 var player = null
+var animlock = false
+var die = false
 
 func _ready():
-	$NavigationAgent2D.avoidance_enabled
+	$AnimatedSprite2D.play("default")
 
 func _on_sightline_body_entered(body):
 	player = body
 	$NavigationAgent2D.set_target_position(player.global_position)
-	$AnimatedSprite2D.play("chase")
+	if not animlock == true:
+		$AnimatedSprite2D.play("chase")
 	player_chase = true
 
 func _on_sightline_body_exited(body):
 	player = null
-	$AnimatedSprite2D.play("default")
+	if not animlock == true:
+		$AnimatedSprite2D.play("default")
 	player_chase = false
-	
 	
 
 func _physics_process(delta):
@@ -34,5 +37,25 @@ func _physics_process(delta):
 			var next_path_position = $NavigationAgent2D.get_next_path_position() #gets next position to path to player
 			velocity = (next_path_position - current_agent_position).normalized() * speed #calaculates vector to next position
 			look_at(next_path_position)
-			move_and_slide() #moves using calculated vector
-		
+			move_and_slide() #moves using calculated vector		
+
+func _on_bad_zone_body_entered(body):
+		print("click")
+		speed = 0
+		player_chase = false
+		$AnimatedSprite2D.play("pre_explode")
+		$"Big boom".start()
+
+func _on_big_boom_timeout():
+	if not animlock == true:
+		$AnimatedSprite2D.play("explode")
+		animlock = true
+	var deadmen = $Explosion_radius.get_overlapping_bodies()
+	print("boom")
+	print(deadmen)
+	die = true
+
+func _process(delta):
+	if die == true:
+		if $AnimatedSprite2D.is_playing() == false:
+			queue_free()
