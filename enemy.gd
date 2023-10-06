@@ -7,6 +7,7 @@ var player_chase = false
 var player = null
 var animlock = false
 var die = false
+var me = self
 
 func _ready():
 	$AnimatedSprite2D.play("default")
@@ -43,8 +44,9 @@ func _on_bad_zone_body_entered(body):
 		print("click")
 		speed = 0
 		player_chase = false
-		$AnimatedSprite2D.play("pre_explode")
-		$"Big boom".start()
+		if animlock == false:
+			$AnimatedSprite2D.play("pre_explode")
+			$"Big boom".start()
 
 func _on_big_boom_timeout():
 	if not animlock == true:
@@ -59,3 +61,7 @@ func _process(delta):
 	if die == true:
 		if $AnimatedSprite2D.is_playing() == false:
 			queue_free()
+
+
+func _on_tree_exiting():
+	remove_from_group("enemy")
