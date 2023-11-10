@@ -1,4 +1,8 @@
 res://level1.tscn
 res://player.tscn
 res://enemy.tscn
-res://enemy.gd
+res://spawner.tscn
+res://Main Menu.tscn
+res://startbutton.gd
+res://mainmenu.gd
+res://main_menu.tscn
