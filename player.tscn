@@ -705,16 +705,8 @@ position = Vector2(26, 15)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_a7vrl")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -55.0
-offset_top = -92.0
-offset_right = 24.0
-offset_bottom = -66.0
-text = "ARRESTED"
-metadata/_edit_lock_ = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.9, 0.9)
+zoom = Vector2(0.7, 0.7)
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

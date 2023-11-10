@@ -1,12 +1,14 @@
 extends CharacterBody2D
+
 var dash = true #whether the player can dash or not
 var animlock = false #while true, locks other animations from playing. This prevents weird animation-
 #clipping and stops animation cancelling on certain animations
+
 @export var speed = 800
+@export var hp = 1000
 
 #HIDES THE LABEL UPON LOADING IN
 func _ready():
-	$Label.hide()
 	$AnimatedSprite2D.play("idle") #sets the animation to idle state
 
 #---------------------PLAYER INPUT---------------------------------------
@@ -21,6 +23,7 @@ func movement_input():
 		vector.y += 1
 	if Input.is_action_pressed("move_up"): #moving up sets the y velocity to negative and vice versa
 		vector.y -= 1 #this is because the postive y axis is flipped
+		
 #--------------------------VECTOR MATH---------------------------------------------------------
 	vector = vector.normalized() * speed #scales the magnitude to 1 - keeps speed the same when moving diagonally
 	if vector.length() > 0: #if the magnitude of the vector is greater than 0
@@ -65,10 +68,6 @@ func _physics_process(_delta): #called every frame
 		$AnimatedSprite2D.play("idle")
 	
 	look_at(get_global_mouse_position())
-
-func _on_enemy_caught():
-	$Label.show()
-
 
 func _on_dash_active_timeout(): #when the active dash has run out, returns speed to normal and begins cooldown
 	speed = 800

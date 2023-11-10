@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Infiltration Inc"
-run/main_scene="res://level1.tscn"
+config/name="A Level Programming Project"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/image="res://resources/Boomba/boomba red.png"
 config/icon="res://icon.svg"
 
 [input]
