@@ -732,5 +732,5 @@ one_shot = true
 [connection signal="timeout" from="Dash Cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Dash Active" to="." method="_on_dash_active_timeout"]
 [connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]
-[connection signal="timeout" from="HeavyAttacking" to="." method="_on_heavy_attacking_timeout"]
 [connection signal="timeout" from="HeavyAttacking" to="." method="_on_attacking_timeout"]
+[connection signal="timeout" from="HeavyAttacking" to="." method="_on_heavy_attacking_timeout"]

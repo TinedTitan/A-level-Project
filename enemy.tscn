@@ -158,7 +158,7 @@ disabled = true
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="body_entered" from="sightline" to="." method="_on_sightline_body_entered"]
 [connection signal="body_exited" from="sightline" to="." method="_on_sightline_body_exited"]
-[connection signal="body_entered" from="bad zone" to="." method="_on_sightline_body_entered"]
 [connection signal="body_entered" from="bad zone" to="." method="_on_bad_zone_body_entered"]
+[connection signal="body_entered" from="bad zone" to="." method="_on_sightline_body_entered"]
 [connection signal="body_exited" from="bad zone" to="." method="_on_sightline_body_exited"]
 [connection signal="timeout" from="Big boom" to="." method="_on_big_boom_timeout"]

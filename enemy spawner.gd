@@ -13,10 +13,11 @@ func _ready():
 	randomize()
 
 func _process(delta):
+	enemy_group = get_tree().get_nodes_in_group("enemy")
 	enemycount = len(enemy_group)
 	print(enemycount)
 	
-	while enemycount < 8:
+	if enemycount < 8:
 		if timerlock == false:
 			$Timer.start(randi() % 10)
 			timerlock = true
@@ -24,11 +25,7 @@ func _process(delta):
 		
 
 func _on_timer_timeout():
-	#var enemigo = enemy.instance()
-	#add_child(enemigo)
+	var enemigo = enemy.instance()
+	add_child(enemigo)
 	timerlock = false
 	print("Spawn")
-
-
-func _on_enemy_tree_exiting():
-	enemy.remove_from_group()
