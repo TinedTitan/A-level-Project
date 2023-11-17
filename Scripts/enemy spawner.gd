@@ -9,7 +9,7 @@ var timerlock = false
 func _ready():
 	enemy_group = get_tree().get_nodes_in_group("enemy")
 	print(enemy_group)
-	var enemy = load("res://enemy.tscn")
+	var enemy = load("res://Entities/enemy.tscn")
 	randomize()
 
 func _process(delta):
