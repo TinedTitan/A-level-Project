@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cec20vfuwv386"]
+[gd_scene load_steps=4 format=3 uid="uid://dujj2madc2dc7"]
 
-[ext_resource type="PackedScene" uid="uid://7bde67j70grc" path="res://player.tscn" id="1_686e6"]
-[ext_resource type="PackedScene" uid="uid://bbh3mqb5o5ekj" path="res://enemy.tscn" id="1_ewrqi"]
-[ext_resource type="PackedScene" uid="uid://dqiqnggynusc4" path="res://tile_map.tscn" id="2_4f1tb"]
+[ext_resource type="PackedScene" path="res://Entities/player.tscn" id="1_686e6"]
+[ext_resource type="PackedScene" path="res://Entities/enemy.tscn" id="1_ewrqi"]
+[ext_resource type="PackedScene" uid="uid://dqiqnggynusc4" path="res://Maps/tile_map.tscn" id="2_4f1tb"]
 
 [node name="Main" type="Node"]
 

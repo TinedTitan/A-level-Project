@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbh3mqb5o5ekj"]
+[gd_scene load_steps=16 format=3]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_rkcbv"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_rkcbv"]
 [ext_resource type="Texture2D" uid="uid://d33ukunfpkw08" path="res://resources/Boomba/boomba.png" id="2_1reqy"]
 [ext_resource type="Texture2D" uid="uid://bcwk5hfsxbibm" path="res://resources/Boomba/boomba empty.png" id="2_iy8fh"]
 [ext_resource type="Texture2D" uid="uid://udj2bpq5xxg8" path="res://resources/Boomba/boomba half.png" id="3_pw0sd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://clvj1uu8ykwta" path="res://resources/kaboom/boom4.png" id="9_77a08"]
 [ext_resource type="Texture2D" uid="uid://ckw6ac7sm1yv4" path="res://resources/kaboom/boom5.png" id="10_hhrdf"]
 [ext_resource type="Texture2D" uid="uid://cl54gvwnysjaw" path="res://resources/kaboom/boom6.png" id="11_1ieo8"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbsal"]
 size = Vector2(62, 62)

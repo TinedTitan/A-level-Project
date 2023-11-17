@@ -1,6 +1,6 @@
-[gd_scene load_steps=162 format=3 uid="uid://7bde67j70grc"]
+[gd_scene load_steps=162 format=3]
 
-[ext_resource type="Script" path="res://player.gd" id="1_c4mag"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_c4mag"]
 [ext_resource type="Texture2D" uid="uid://duwtibwqjulix" path="res://resources/enemyClose/hit/armature_hit_00.png" id="2_wa7a5"]
 [ext_resource type="Texture2D" uid="uid://bvkxk7ic1664v" path="res://resources/enemyClose/hit/armature_hit_01.png" id="3_qv4rg"]
 [ext_resource type="Texture2D" uid="uid://c6w7nknqwv2r5" path="res://resources/enemyClose/hit/armature_hit_02.png" id="4_wuuka"]
@@ -159,6 +159,7 @@
 [ext_resource type="Texture2D" uid="uid://c84fgs0keyf61" path="res://resources/enemyClose/thrust/armature_thrust_60.png" id="157_pij4a"]
 [ext_resource type="Texture2D" uid="uid://c2bssrhvrh2sh" path="res://resources/dash/dash_startup.png" id="158_5hdfe"]
 [ext_resource type="Texture2D" uid="uid://ccp044rmcn7lk" path="res://resources/dash/dash_active.png" id="159_61sup"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7vrl"]
 radius = 69.0
