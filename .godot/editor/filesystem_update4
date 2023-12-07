@@ -1,7 +1,10 @@
-res://Main Menu/main_menu.tscn
-res://level1.tscn
 res://Main Menu/settings.tscn
+<<<<<<< Updated upstream
 res://Scripts/mainmenu.gd
 res://Scripts/enemy spawner.gd
 res://Maps/level1.tscn
 res://Scripts/Back Button.gd
+=======
+res://Scripts/player.gd
+res://Scripts/save.gd
+>>>>>>> Stashed changes

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=16 format=3 uid="uid://ofv1ljdgb405"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_rkcbv"]
 [ext_resource type="Texture2D" uid="uid://d33ukunfpkw08" path="res://resources/Boomba/boomba.png" id="2_1reqy"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://clvj1uu8ykwta" path="res://resources/kaboom/boom4.png" id="9_77a08"]
 [ext_resource type="Texture2D" uid="uid://ckw6ac7sm1yv4" path="res://resources/kaboom/boom5.png" id="10_hhrdf"]
 [ext_resource type="Texture2D" uid="uid://cl54gvwnysjaw" path="res://resources/kaboom/boom6.png" id="11_1ieo8"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbsal"]
 size = Vector2(62, 62)
@@ -119,7 +118,6 @@ shape = SubResource("RectangleShape2D_bbsal")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lctky")
-animation = &"explode"
 
 [node name="sightline" type="Area2D" parent="."]
 collision_layer = 2
@@ -159,7 +157,7 @@ disabled = true
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="body_entered" from="sightline" to="." method="_on_sightline_body_entered"]
 [connection signal="body_exited" from="sightline" to="." method="_on_sightline_body_exited"]
-[connection signal="body_entered" from="bad zone" to="." method="_on_bad_zone_body_entered"]
 [connection signal="body_entered" from="bad zone" to="." method="_on_sightline_body_entered"]
+[connection signal="body_entered" from="bad zone" to="." method="_on_bad_zone_body_entered"]
 [connection signal="body_exited" from="bad zone" to="." method="_on_sightline_body_exited"]
 [connection signal="timeout" from="Big boom" to="." method="_on_big_boom_timeout"]

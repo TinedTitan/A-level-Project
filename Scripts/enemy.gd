@@ -14,7 +14,6 @@ func _ready():
 
 func _on_sightline_body_entered(body):
 	player = body
-	$NavigationAgent2D.set_target_position(player.global_position)
 	if not animlock == true:
 		$AnimatedSprite2D.play("chase")
 	player_chase = true

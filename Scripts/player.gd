@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var dash = true #whether the player can dash or not
-var animlock = false #while true, locks other animations from playing. This prevents weird animation-
+var dash_available = true #whether the player can dash or not
+var animation_lock = false #while true, locks other animations from playing. This prevents weird animation-
 #clipping and stops animation cancelling on certain animations
 
 @export var speed = 800
@@ -31,28 +31,28 @@ func movement_input():
 #
 func _process(_delta):
 	
-	if animlock == false: #checks if the player is in a locked animation
+	if animation_lock == false: #checks if the player is in a locked animation
 		
 		if Input.is_action_just_pressed("MB1"):
-			animlock = true #locks other animations
+			animation_lock = true #locks other animations
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("Slash")
 			$Attacking.start()
 		
 		if Input.is_action_just_pressed("MB2"):
-			animlock = true
+			animation_lock = true
 			$AnimatedSprite2D.stop()
 			$AnimatedSprite2D.play("Thrust")
 			$HeavyAttacking.start()
 			
-	if dash == true: #checks if the player can dash
+	if dash_available == true: #checks if the player can dash
 		if Input.is_action_just_pressed("shift"):
 			speed = 5000
 			$"Dash Active".start() #starts the timer of the dash being active
 			print("Dash")
 			$AnimatedSprite2D.stop() #stops any other ongoing animation and begins dash - enables dash-cancel
 			$AnimatedSprite2D.play("dash")
-			dash = false
+			dash_available = false
 		
 		
 #runs every physics update (once a frame)
@@ -62,9 +62,9 @@ func _physics_process(_delta): #called every frame
 	move_and_slide() #uses inbuilt move_and_slide function to move the player based on velocity
 	
 	if velocity.x != 0 or velocity.y != 0:
-		if animlock == false:
+		if animation_lock == false:
 			$AnimatedSprite2D.play("Moving")
-	elif animlock != true:
+	elif animation_lock != true:
 		$AnimatedSprite2D.play("idle")
 	
 	look_at(get_global_mouse_position())
@@ -72,16 +72,15 @@ func _physics_process(_delta): #called every frame
 func _on_dash_active_timeout(): #when the active dash has run out, returns speed to normal and begins cooldown
 	speed = 800
 	$"Dash Cooldown".start()
-	animlock = false
+	animation_lock = false
 	print("Active Timeout")
 
-
 func _on_dash_cooldown_timeout():
-	dash = true
+	dash_available = true
 	print("Cooldown Timeout")
 
 func _on_attacking_timeout():
-	animlock = false
+	animation_lock = false
 
 func _on_heavy_attacking_timeout():
-	animlock = false
+	animation_lock = false
