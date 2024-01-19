@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d0xdnvvhessv4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 150.0
+offset_right = 1210.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
+text = "RESUME"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 350.0
+offset_right = 1210.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+
+[node name="To Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 550.0
+offset_right = 1210.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 50
+text = "QUIT TO MENU"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 750.0
+offset_right = 1210.0
+offset_bottom = 900.0
+theme_override_font_sizes/font_size = 50
+text = "QUIT TO DESKTOP"

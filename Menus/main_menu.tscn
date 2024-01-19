@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://big1xde8ttv4o"]
 
-[ext_resource type="Script" path="res://Scripts/save.gd" id="1_qact4"]
+[ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_mf3sq"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_qact4")
+script = ExtResource("1_mf3sq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
@@ -65,8 +65,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_font_sizes/font_size = 50
 text = "SETTINGS"
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Start Button" to="." method="_on_button_pressed"]
