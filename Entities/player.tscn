@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3]
+[gd_scene load_steps=162 format=3 uid="uid://dfb2n865k7k1h"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_c4mag"]
 [ext_resource type="Texture2D" uid="uid://duwtibwqjulix" path="res://resources/enemyClose/hit/armature_hit_00.png" id="2_wa7a5"]
@@ -159,7 +159,6 @@
 [ext_resource type="Texture2D" uid="uid://c84fgs0keyf61" path="res://resources/enemyClose/thrust/armature_thrust_60.png" id="157_pij4a"]
 [ext_resource type="Texture2D" uid="uid://c2bssrhvrh2sh" path="res://resources/dash/dash_startup.png" id="158_5hdfe"]
 [ext_resource type="Texture2D" uid="uid://ccp044rmcn7lk" path="res://resources/dash/dash_active.png" id="159_61sup"]
-
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7vrl"]
 radius = 69.0
@@ -733,5 +732,5 @@ one_shot = true
 [connection signal="timeout" from="Dash Cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Dash Active" to="." method="_on_dash_active_timeout"]
 [connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]
-[connection signal="timeout" from="HeavyAttacking" to="." method="_on_attacking_timeout"]
 [connection signal="timeout" from="HeavyAttacking" to="." method="_on_heavy_attacking_timeout"]
+[connection signal="timeout" from="HeavyAttacking" to="." method="_on_attacking_timeout"]

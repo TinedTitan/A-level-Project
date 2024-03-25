@@ -1,1 +1,12 @@
+res://Maps/level1.tscn
+res://Menus/settings.tscn
+res://Menus/main_menu.tscn
+res://Entities/enemy.tscn
+res://Entities/player.tscn
+res://Menus/pause menu.tscn
 res://Menus/HUD.tscn
+res://Maps/tile_map.tscn
+res://Scripts/enemy.gd
+res://Scripts/mainmenu.gd
+res://Scripts/Back Button.gd
+res://Scripts/player.gd

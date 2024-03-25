@@ -66,9 +66,9 @@ theme_override_font_sizes/font_size = 50
 text = "SETTINGS"
 
 [connection signal="pressed" from="Exit" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Start Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_button_pressed"]

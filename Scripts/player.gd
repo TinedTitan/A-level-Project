@@ -7,7 +7,6 @@ var animation_lock = false #while true, locks other animations from playing. Thi
 @export var speed = 800
 @export var hp = 1000
 
-#HIDES THE LABEL UPON LOADING IN
 func _ready():
 	$AnimatedSprite2D.play("idle") #sets the animation to idle state
 
